@@ -1,5 +1,8 @@
 <div class="feed-container">
   <h2>News Feed</h2>
+
+  <app-create-post (postCreated)="loadFeed()"></app-create-post>
+
   <div *ngFor="let post of posts" class="post-card">
     <div class="author">{{ post.author }}</div>
     <div class="content">{{ post.content }}</div>

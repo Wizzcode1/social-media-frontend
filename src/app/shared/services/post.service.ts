@@ -12,4 +12,9 @@ export class PostService {
   getFeed(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.baseUrl}/feed`);
   }
+
+  createPost(content: string): Observable<Post> {
+    return this.http.post<Post>(`${this.baseUrl}/create`, { content });
+  }
+
 }
