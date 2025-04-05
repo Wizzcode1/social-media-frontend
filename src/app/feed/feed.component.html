@@ -1,11 +1,22 @@
-<div class="feed-container">
-  <h2>News Feed</h2>
+<div class="feed-wrapper">
+  <mat-toolbar color="primary" class="mat-elevation-z4">
+    <span>Social Media Feed</span>
+  </mat-toolbar>
 
-  <app-create-post (postCreated)="loadFeed()"></app-create-post>
+  <div class="feed-container">
+    <app-create-post (postCreated)="loadFeed()"></app-create-post>
 
-  <div *ngFor="let post of posts" class="post-card">
-    <div class="author">{{ post.author }}</div>
-    <div class="content">{{ post.content }}</div>
-    <div class="date">{{ post.createdAt | date: 'short' }}</div>
+    <div *ngFor="let post of posts">
+      <mat-card class="post-card mat-elevation-z2">
+        <mat-card-header>
+          <mat-card-subtitle> {{ post.author }}</mat-card-subtitle>
+          <mat-card-title-group>{{ post.createdAt | date: 'short' }}</mat-card-title-group>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>{{ post.content }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>

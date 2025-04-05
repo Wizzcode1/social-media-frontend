@@ -1,20 +1,27 @@
-<div class="login-container">
-  <h2>Login</h2>
+<mat-card class="auth-card">
+  <h2 mat-card-title>Login</h2>
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label>Email</label>
-    <input type="email" formControlName="email" />
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
 
-    <label>Password</label>
-    <input type="password" formControlName="password" />
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" />
+    </mat-form-field>
 
-    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+      Login
+    </button>
+
+    <div class="error" *ngIf="error">{{ error }}</div>
   </form>
 
-  <p *ngIf="error" style="color:red">{{ error }}</p>
-
-  <p>
-    Don’t have an account?
+  <div class="auth-footer">
+    <span>Don’t have an account?</span>
     <a routerLink="/register">Register here</a>
-  </p>
-</div>
+  </div>
+
+</mat-card>

@@ -1,14 +1,25 @@
 import {Component, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import { RouterModule, Router } from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 import {AuthService} from '../../shared/services/auth.service';
-import {LoginRequest} from '../../shared/models/auth.model';
+import {MatFormField, MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    RouterModule,
+    MatFormField,
+    ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

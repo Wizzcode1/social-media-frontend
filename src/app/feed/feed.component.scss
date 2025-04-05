@@ -2,27 +2,46 @@
   max-width: 600px;
   margin: 40px auto;
   padding: 1rem;
+}
+
+.feed-wrapper {
+  min-height: 100vh;
+  background: #f5f7fa;
+
+  mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding-left: 1rem;
+    font-weight: 600;
+  }
+}
+
+.feed-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  app-create-post {
+    margin-bottom: 2rem;
+  }
 
   .post-card {
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    background: #fff;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
 
-    .author {
+    mat-card-title {
       font-weight: bold;
-      margin-bottom: 0.5rem;
     }
 
-    .content {
+    mat-card-content p {
       font-size: 1rem;
+      margin: 0.5rem 0;
     }
 
-    .date {
+    mat-card-subtitle {
       font-size: 0.8rem;
-      color: gray;
-      text-align: right;
+      color: #757575;
     }
   }
 }

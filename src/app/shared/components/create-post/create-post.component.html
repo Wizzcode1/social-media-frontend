@@ -1,4 +1,10 @@
 <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="post-form">
-  <textarea formControlName="content" rows="3" placeholder="What's on your mind?"></textarea>
-  <button type="submit" [disabled]="postForm.invalid">Post</button>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>What's on your mind?</mat-label>
+    <textarea matInput rows="3" formControlName="content"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="postForm.invalid">
+    Post
+  </button>
 </form>
